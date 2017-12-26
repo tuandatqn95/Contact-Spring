@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+	<nav th:replace="layout :: header"></nav>
+
+	<div class="container main-content form">
+
+		<div class="row">
+			<form th:action="@{/contact/delete}" th:object="${contact}" method="POST"
+				novalidate="novalidate">
+				<input type="hidden" th:field="*{id}" name="q" />
+				
+				<a href="btn btn-danger">Delete</a>
+				<button type="submit" class="btn btn-primary">Cancel</button>
+			</form>
+		</div>
+	</div>
+	<!-- /.container -->
+
+	<footer th:replace="layout :: footer"></footer>
+</body>
+</html>
